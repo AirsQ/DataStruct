@@ -83,7 +83,7 @@ public class SingleLinkedListDemo {
 class SingleLinkedList {
 
     // 头节点 仅作带头用，没有存储功能
-    private HeroNode head = new HeroNode(-1, "", "");
+    private final HeroNode head = new HeroNode(-1, "", "");
 
     public HeroNode getHead() {
         return head;

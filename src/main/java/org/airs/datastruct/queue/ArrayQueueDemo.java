@@ -42,7 +42,7 @@ class ArrayQueue {
      */
     private int front = 0;
     private int rear = 0;
-    private int maxSize = 0;
+    private final int maxSize;
     private final int[] queue;
 
     public ArrayQueue(int size) {
@@ -106,7 +106,7 @@ class ArrayQueue {
             i = i % maxSize;
             System.out.printf("queue[%d]=%d\n", viewIdx, queue[i]);
             i++;
-            viewIdx ++;
+            viewIdx++;
         }
     }
 

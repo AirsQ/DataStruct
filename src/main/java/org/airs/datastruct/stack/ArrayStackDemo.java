@@ -86,7 +86,7 @@ class ArrayStack {
 
 class SingleLinkedStack {
 
-    private Node head = new Node(-1, null);
+    private final Node head = new Node(-1, null);
 
     public boolean isEmpty() {
         return head.next == null;

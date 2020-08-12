@@ -9,13 +9,14 @@ public class PolandNotation {
 
     public static void main(String[] args) {
 
-//        String suffixExpression = "3 4 + 5 * 6 -";
-//        calculate(getListString(suffixExpression));
+        String suffixExpression = "3 4 + 5 * 6 -";
+        calculate(getListString(suffixExpression));
 
         String infixExpr = "1+((2+3)*4)-5";
 //        System.out.println(getInfixList(infixExpr));
 //        convertToSufExpression(getInfixList(infixExpr));
-        calculate(convertToSufExpression(getInfixList(infixExpr)));
+        int value = calculate(convertToSufExpression(getInfixList(infixExpr)));
+        System.out.println(value);
     }
 
     public static List<String> getListString(String suffixExp) {
@@ -39,7 +40,6 @@ public class PolandNotation {
             numStack.push(String.valueOf(res));
         });
 
-        System.out.println(numStack.peek());
         return Integer.parseInt(numStack.pop());
     }
 

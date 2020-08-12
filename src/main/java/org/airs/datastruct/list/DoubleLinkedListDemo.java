@@ -20,22 +20,21 @@ public class DoubleLinkedListDemo {
         doubleLinkedList.addByOrder(heroNode6);
         doubleLinkedList.list();
 
-//        HeroNode2 tempNode = new HeroNode2(2, "test", "test");
-//        doubleLinkedList.update(tempNode);
-//        doubleLinkedList.list();
+        HeroNode2 tempNode = new HeroNode2(2, "test", "test");
+        doubleLinkedList.update(tempNode);
+        doubleLinkedList.list();
 
-//        doubleLinkedList.delete(10);
-////        doubleLinkedList.delete(2);
-//        System.out.println("delete:");
-//        doubleLinkedList.list();
-
+        doubleLinkedList.delete(10);
+        doubleLinkedList.delete(2);
+        System.out.println("delete:");
+        doubleLinkedList.list();
     }
 }
 
 class DoubleLinkedList {
 
     // 头节点
-    private HeroNode2 head = new HeroNode2(-1, "", "");
+    private final HeroNode2 head = new HeroNode2(-1, "", "");
 
     public HeroNode2 getHead() {
         return head;

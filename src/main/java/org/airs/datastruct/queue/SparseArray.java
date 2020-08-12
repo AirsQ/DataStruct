@@ -36,7 +36,7 @@ public class SparseArray {
         sparseArr[0][2] = valueCount;
 
         int sparseIndex = 1;
-        int value = 0;
+        int value;
         for (int i = 0; i < originalArr.length; i++) {
             for (int j = 0; j < originalArr[i].length; j++) {
                 value = originalArr[i][j];
@@ -144,9 +144,9 @@ public class SparseArray {
         try (FileReader fileReader = new FileReader(file);
              BufferedReader bufferedReader = new BufferedReader(fileReader)) {
 
-            String line = "";
-            String[] strArr = null;
-            int[] intArr = null;
+            String line;
+            String[] strArr;
+            int[] intArr;
 
             while ((line = bufferedReader.readLine()) != null) {
                 strArr = line.split(",");
