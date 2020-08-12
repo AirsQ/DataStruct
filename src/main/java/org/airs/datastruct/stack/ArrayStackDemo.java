@@ -74,6 +74,14 @@ class ArrayStack {
             System.out.printf("[%d]值：%d\n", i, stack[i]);
         }
     }
+
+    public int peek() {
+        if (isEmpty()) {
+            throw new RuntimeException("栈空！");
+        }
+
+        return stack[top];
+    }
 }
 
 class SingleLinkedStack {
