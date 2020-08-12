@@ -233,17 +233,6 @@ class SingleLinkedList {
             return;
         }
 
-//        SingleLinkedList result = new SingleLinkedList();
-        HeroNode temp = head;
-//        while (temp.next != null) {
-//            temp = temp.next;
-//            result.headAdd(new HeroNode(temp.no, temp.name, temp.nickName));
-//        }
-//
-//        head = result.head;
-//        result = null;
-
-
         /*
          * 1. temp 记录当前节点
          * 2. next 记录下一个节点
@@ -251,6 +240,7 @@ class SingleLinkedList {
          */
         HeroNode reverseHead = new HeroNode(-1, "", "");
         HeroNode next = head.next;
+        HeroNode temp;
         while (next != null) {
             temp = next;
             next = next.next;

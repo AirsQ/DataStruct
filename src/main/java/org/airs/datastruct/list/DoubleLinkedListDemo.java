@@ -14,14 +14,22 @@ public class DoubleLinkedListDemo {
         HeroNode2 heroNode7 = new HeroNode2(7, "7", "智多星");
         HeroNode2 heroNode8 = new HeroNode2(8, "8", "豹子头");
 
-        doubleLinkedList.addToLast(heroNode4);
-        doubleLinkedList.addToLast(heroNode5);
-        doubleLinkedList.addToLast(heroNode2);
-        doubleLinkedList.addToLast(heroNode6);
-
+        doubleLinkedList.addByOrder(heroNode4);
+        doubleLinkedList.addByOrder(heroNode5);
+        doubleLinkedList.addByOrder(heroNode2);
+        doubleLinkedList.addByOrder(heroNode6);
         doubleLinkedList.list();
-    }
 
+//        HeroNode2 tempNode = new HeroNode2(2, "test", "test");
+//        doubleLinkedList.update(tempNode);
+//        doubleLinkedList.list();
+
+//        doubleLinkedList.delete(10);
+////        doubleLinkedList.delete(2);
+//        System.out.println("delete:");
+//        doubleLinkedList.list();
+
+    }
 }
 
 class DoubleLinkedList {
@@ -61,6 +69,39 @@ class DoubleLinkedList {
 
         temp.next = node;
         node.pre = temp;
+    }
+
+    public void addByOrder(HeroNode2 heroNode) {
+        /*
+         * 根据排名按顺序添加
+         * 遍历比较排名的大小
+         * 如果下一个节点编号相等，直接报错
+         * 如果下一个节点大 那么直接插入
+         */
+        HeroNode2 temp = head;
+        while (true) {
+            if (temp.next == null) {
+                temp.next = heroNode;
+                heroNode.pre = temp;
+                break;
+            }
+
+            if (temp.next.no == heroNode.no) {
+                System.err.println("存在重复编号的值！no:" + heroNode.no);
+                break;
+            }
+
+            if (temp.next.no > heroNode.no) {
+                heroNode.next = temp.next;
+                heroNode.pre = temp;
+
+                temp.next = heroNode;
+                heroNode.next.pre = heroNode;
+                break;
+            }
+
+            temp = temp.next;
+        }
     }
 
     // 修改
