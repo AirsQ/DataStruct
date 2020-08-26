@@ -7,7 +7,6 @@ public class SelectSort {
 
         int[] arr = {3, -1, -2, 9, 10};
 
-
         int min = 0;
         for (int i = 0; i < arr.length - 1; i++) {
             min = arr[i];
