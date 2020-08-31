@@ -4,6 +4,7 @@ import java.util.Arrays;
 
 public class RadixSort {
     public static void main(String[] args) {
+        // 注意现在不支持负数
         int[] arr = {53, 3, 542, 748, 14, 214};
         radixSort(arr);
     }
